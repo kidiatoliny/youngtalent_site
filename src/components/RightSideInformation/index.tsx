@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
  import {devData} from '../../data'
 
 import Icon from '../Icon';
+import SocialMedia from '../SocialMedia';
 const RightSideInformation: React.FC = ({ children }) => {
   const scrollThreshold = 100
 
@@ -42,19 +43,7 @@ const RightSideInformation: React.FC = ({ children }) => {
           <small>work hard play hard</small>
           <hr/>
             <div>
-
-
-
-            {
-                    devData.map(social=>(
-                      <Icon
-                      icon={social.icon}
-                      url={social.url}
-                      name={social.name}
-                      size={24}/>
-                    ))
-                  }
-
+              <SocialMedia socialMedia={devData} size={24}/>
             </div>
         </footer>
       </Description>

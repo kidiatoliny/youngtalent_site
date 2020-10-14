@@ -4,13 +4,12 @@ import Section from './components/section'
 import RigthSideInformation from './components/RightSideInformation'
 import {data, socialMedia, departaments,partners} from './data'
 import Logo from './components/logo';
-import Icon from './components/Icon';
-import SocialIcon from './components/SocialIcon';
-import { DepartamentContainer } from './components/section/styles';
-import Departaments from './components/Departaments';
 
-import Card from './components/Card';
-import PartnersCard from './components/PartnersCard';
+import SocialIcon from './components/SocialMedia';
+import Departaments from './sections/Departaments';
+import Partners from './sections/Partners'
+import SocialMedia from './components/SocialMedia';
+
 function App() {
   return (
     <>
@@ -19,39 +18,11 @@ function App() {
     title={data[0].title}
     description={data[0].description}
     />
-        <Section variant="departaments">
-     <DepartamentContainer>
-
-       <h1>Nossos Departamentos</h1>
-       <Departaments>
-        {
-          departaments.map(departament=>
-            <Card
-            name={departament.name}
-            url={departament.url}
-            img={departament.img}
-            mentor={departament.mentor}
-            />
-          )
-        }
-       </Departaments>
-
-     </DepartamentContainer>
-     </Section>
-      <Section
-    variant="partners">
+    <Departaments departaments={departaments}/>
+    <Partners partners={partners}/>
 
 
-<DepartamentContainer color="white">
-
-<h1>Nossos Parceiros</h1>
-<Departaments>
-     <PartnersCard partners={partners}/>
-</Departaments>
-</DepartamentContainer>
-    </Section>
-
-      <Section
+      {/* <Section
     variant="tech"
     title={data[3].title}
     description={data[3].description}
@@ -60,18 +31,10 @@ function App() {
     variant="social"
     title={data[4].title}
     description={data[4].description}
-    />
+    /> */}
     <RigthSideInformation>
       <Logo/>
-
-    <SocialIcon>
-    {
-        socialMedia.map(social=>(
-          <Icon icon={social.icon} url={social.url} name={social.name} size={48}/>
-        ))
-      }
-    </SocialIcon>
-
+      <SocialMedia socialMedia={socialMedia} size={48}/>
     </RigthSideInformation>
     <GlobalStyle/>
     </>
