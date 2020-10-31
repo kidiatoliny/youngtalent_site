@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 *{
@@ -7,8 +7,8 @@ export default createGlobalStyle`
   box-sizing:border-box;
 }
 
-*, button, input{
-  font-family: Roboto, sans-serif;
+*, button, input, body{
+  font-family: 'Ubuntu', sans-serif;
 }
 
 :root {

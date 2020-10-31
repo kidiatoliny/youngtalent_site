@@ -1,30 +1,29 @@
-import React from 'react';
-import { DepartamentContainer } from '../../components/section/styles';
-import PartnersCard from '../../components/PartnersCard';
+import React from 'react'
+
+import PartnersCard from '../../components/PartnersCard'
 import Section from '../../components/section'
-interface iPartners{
-  name:string,
-  url?:string,
-  logo:string
+import { DepartamentContainer } from '../../components/section/styles'
+interface iPartners {
+  name: string
+  url?: string
+  logo: string
+  id: number
 }
 
-interface iProps{
-  partners:Array<iPartners>
+interface iProps {
+  partners: Array<iPartners>
 }
-const Partners: React.FC<iProps> = ({partners}) => {
+const Partners: React.FC<iProps> = ({ partners }) => {
   return (
-<Section
-    variant="partners">
-
-  <DepartamentContainer color="white">
-
-    <h1>Nossos Parceiros</h1>
-    <div>
-        <PartnersCard partners={partners}/>
-    </div>
-  </DepartamentContainer>
-</Section>
-  );
+    <Section variant="partners">
+      <DepartamentContainer color="white">
+        <h1>Parceiros</h1>
+        <div>
+          <PartnersCard partners={partners} />
+        </div>
+      </DepartamentContainer>
+    </Section>
+  )
 }
 
-export default Partners;
+export default Partners
